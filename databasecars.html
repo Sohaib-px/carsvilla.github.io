@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa's special</title>
+    <link rel="stylesheet" href="database.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .vehicles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .car, .truck, .van {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .car:hover, .truck:hover, .van:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .car img, .truck img, .van img {
+            width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #555;
+            margin: 15px;
+        }
+
+        .description {
+            font-size: 1em;
+            color: #777;
+            margin: 0 15px 15px;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        .rent-btn {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 0 15px 15px;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .rent-btn:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        /* New Button Styles */
+        .nav-buttons {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .nav-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .nav-buttons a:active {
+            background-color: #004085;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <h1>Villa's special</h1>
+
+    <div class="nav-buttons">
+        <a href="home.html">Go to Home</a>
+        <a href="form.html">Go to Form</a>
+    </div>
+
+    <div class="vehicles-container">
+        <!-- Vehicle Cards -->
+        <div class="truck">
+            <img src="01_21.jpg" alt="Truck 1">
+            <h2>Range Rover Evoque</h2>
+            <p class="description">A premium luxury Evoque with leather seats, GPS, and a sunroof.</p>
+            <p class="price">$150/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="45ee870e-4e81-4aec-af90-6f90e1e05115.jpg" alt="Car 1">
+            <h2>Novo Porsche 911</h2>
+            <p class="description">A Novo Porsche, perfect for racing and individual trips.</p>
+            <p class="price">$220/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="2015_Toyota_Camry_Hybrid_012.webp" alt="Car 2">
+            <h2>Toyota Camry</h2>
+            <p class="description">A Toyota Camry, perfect for friends and family trips.</p>
+            <p class="price">$/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="204060-Ferrari_488_GTB-car-red_cars.jpg" alt="Car 3">
+            <h2>Ferrari 488 GTB</h2>
+            <p class="description">A GTB, fastest car with horsepower and shock proof.</p>
+            <p class="price">$310/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="lsj1710_001.jpg" alt="Car 4">
+            <h2>Lexus Ls 500</h2>
+            <p class="description">A Ls 500, fastest Lexus car with horsepower and royal vibes and gesture.</p>
+            <p class="price">$425/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="DDS_6496-X4-1030x688.jpg" alt="Car 5">
+            <h2>Lexus GSF Sedan</h2>
+            <p class="description">A GSF, huge size and royal comfort that gives you peace while riding.</p>
+            <p class="price">$170/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="van">
+            <img src="post15488.jpg" alt="Van 1">
+            <h2>Toyota Alphard</h2>
+            <p class="description">A comfort size van with luxurious gesture displaying the royalness.</p>
+            <p class="price">$145/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="porsche-mission_e_concept-2015-1600-01-e1553129481543.webp" alt="Car 7">
+            <h2>Porsche Tycan Turbo S</h2>
+            <p class="description">A speed hub of horsepower and lightning sound that gives you goosebumps.</p>
+            <p class="price">$345/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="car">
+            <img src="maserati-levante-trofeo-1.jpg" alt="Car 9">
+            <h2>Maserati Levante Trofeo</h2>
+            <p class="description">A luxurious, comfy and speed of lightning the racer's lover.</p>
+            <p class="price">$465/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+        <div class="truck">
+            <img src="891533-2016-chevrolet-silverado-2500-hd-cars-truck-pickup.jpg" alt="Truck 2">
+            <h2>Cheverolet Silverado </h2>
+            <p class="description">A premium luxury Silverado with leather seats, GPS, and a monsterous look.</p>
+            <p class="price">$410/day</p>
+            <button class="rent-btn">Villa's special</button>
+        </div>
+    </div>
+</body>
+</html>

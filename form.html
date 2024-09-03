@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vehicle Registration Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+   
+</head>
+<body>
+    <a href="lastpage.html">Go to Next Page</a>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('QAlh00e.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 38px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: fade-in 2s ease-in;
+        }
+
+        h2 {
+            color: goldenrod;
+            font-size: 22px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: slide-in 1.5s ease-out;
+        }
+
+        /* Form Styling */
+        .vehicle-form {
+            width: 40%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            animation: slide-up 2s ease-out;
+        }
+
+        /* Form Input and Select Styles */
+        .vehicle-form input[type="text"],
+        .vehicle-form input[type="number"],
+        .vehicle-form select {
+            width: calc(100% - 20px);
+            height: 35px;
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .vehicle-form input[type="text"]:focus,
+        .vehicle-form input[type="number"]:focus,
+        .vehicle-form select:focus {
+            border-color: goldenrod;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+        }
+
+        /* Button Styles */
+        button {
+            width: calc(100% - 20px);
+            height: 35px;
+            margin-bottom: 12px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            animation: button-pop 0.5s ease-out;
+        }
+
+        button:hover {
+            background-color: grey;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Vehicle Info Box */
+        #vehicle-info, #loaded-vehicles {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slide-in {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slide-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes button-pop {
+            0% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+    </style>
+
+    <h1>Booking Form</h1>
+    <h2>Cars Villa</h2>
+
+    <div id="forms-container">
+        <form class="vehicle-form">
+            <label for="type">Enter vehicle type:</label>
+            <select id="type" name="type">
+                <option value="">Select Type</option>
+                <option value="Car">Car</option>
+                <option value="Truck">Truck</option>
+                <option value="Van">Van</option>
+            </select>
+            <label for="make">Enter make:</label>
+            <input type="text" id="make" name="make">
+            <label for="model">Enter model:</label>
+            <input type="text" id="model" name="model">
+            <label for="year">Enter year:</label>
+            <input type="number" id="year" name="year">
+            <label for="rate">Enter rental rate:</label>
+            <input type="number" id="rate" name="rate">
+        </form>
+    </div>
+
+    <button id="add-vehicle">Add Vehicle</button>
+    <div id="vehicle-info"></div>
+    <button id="load-vehicles">Load Vehicles</button>
+    <div id="loaded-vehicles"></div>
+    <button id="save-vehicles">Save Vehicles</button>
+
+    <script>
+        let vehicles = [];
+
+        function isFormComplete(form) {
+            const type = form.querySelector('#type').value;
+            const make = form.querySelector('#make').value;
+            const model = form.querySelector('#model').value;
+            const year = form.querySelector('#year').value;
+            const rate = form.querySelector('#rate').value;
+
+            return type && make && model && year && rate;
+        }
+
+        function createNewVehicleForm() {
+            const formsContainer = document.getElementById('forms-container');
+            const newForm = document.createElement('form');
+            newForm.className = 'vehicle-form';
+            newForm.innerHTML = `
+                <label for="type">Enter vehicle type:</label>
+                <select id="type" name="type">
+                    <option value="">Select Type</option>
+                    <option value="Car">Car</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Van">Van</option>
+                </select>
+                <label for="make">Enter make:</label>
+                <input type="text" id="make" name="make">
+                <label for="model">Enter model:</label>
+                <input type="text" id="model" name="model">
+                <label for="year">Enter year:</label>
+                <input type="number" id="year" name="year">
+                <label for="rate">Enter rental rate:</label>
+                <input type="number" id="rate" name="rate">
+            `;
+            formsContainer.appendChild(newForm);
+        }
+
+        document.getElementById('add-vehicle').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const forms = document.querySelectorAll('.vehicle-form');
+            const lastForm = forms[forms.length - 1];
+
+            if (!isFormComplete(lastForm)) {
+                alert('Kindly, fill the form completely');
+                return;
+            }
+
+            const type = lastForm.querySelector('#type').value;
+            const make = lastForm.querySelector('#make').value;
+            const model = lastForm.querySelector('#model').value;
+            const year = parseInt(lastForm.querySelector('#year').value);
+            const rate = parseInt(lastForm.querySelector('#rate').value);
+
+            const vehicle = { type, make, model, year, rate };
+            vehicles.push(vehicle);
+
+            const vehicleInfo = document.getElementById('vehicle-info');
+            vehicleInfo.innerHTML = '';
+            vehicles.forEach((vehicle, index) => {
+                vehicleInfo.innerHTML += `
+                    <p>Vehicle ${index + 1}:</p>
+                    <p>Type: ${vehicle.type}</p>
+                    <p>Make: ${vehicle.make}</p>
+                    <p>Model: ${vehicle.model}</p>
+                    <p>Year: ${vehicle.year}</p>
+                    <p>Rental Rate: $${vehicle.rate}</p>
+                `;
+            });
+
+            createNewVehicleForm();
+        });
+
+        document.getElementById('save-vehicles').addEventListener('click', () => {
+            const forms = document.querySelectorAll('.vehicle-form');
+            const lastForm = forms[forms.length - 1];
+
+            if (!isFormComplete(lastForm)) {
+                alert('Kindly, fill the form completely');
+                return;
+            }
+
+            localStorage.setItem('vehicles', JSON.stringify(vehicles));
+            alert('Your data has been saved!');
+        });
+
+        document.getElementById('load-vehicles').addEventListener('click', () => {
+            const loadedVehicles = JSON.parse(localStorage.getItem('vehicles'));
+            if (loadedVehicles) {
+                vehicles = loadedVehicles;
+                const loadedVehiclesDiv = document.getElementById('loaded-vehicles');
+                loadedVehiclesDiv.innerHTML = '';
+                loadedVehicles.forEach((vehicle, index) => {
+                    loadedVehiclesDiv.innerHTML += `
+                        <p>Vehicle ${index + 1}:</p>
+                        <p>Type: ${vehicle.type}</p>
+                        <p>Make: ${vehicle.make}</p>
+                        <p>Model: ${vehicle.model}</p>
+                        <p>Year: ${vehicle.year}</p>
+                        <p>Rental Rate: $${vehicle.rate}</p>
+                    `;
+                });
+            } else {
+                alert('No vehicles found in storage.');
+            }
+        });
+    </script>
+</body>
+</html>

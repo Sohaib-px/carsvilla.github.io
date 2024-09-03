@@ -1,0 +1,44 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-image: url('wp9133661.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+}
+h1 {
+    color: grey;
+    text-decoration: none;
+    animation: fade-in 2s forwards;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h2 {
+    color: goldenrod;
+    text-decoration: none;
+    animation: slide-in 2s forwards;
+    text-align: center;
+}
+.img_deg {
+    float: right;
+    width: 300px;
+    animation: rotate-in 1.5s forwards;
+    margin: 20px;
+}
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slide-in {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes rotate-in {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,5 @@
+SELECT TOP (1000) [user_id]
+      ,[username]
+      ,[password_hash]
+      ,[email]
+  FROM [vehicle_management].[dbo].[Users]

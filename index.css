@@ -1,0 +1,150 @@
+
+body {
+    background-image: url(wp7395082.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.container {
+    width: 90%;
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+}
+
+.signup-form, .login-form {
+    width: 25%;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: none;
+    position: 50px;
+    margin-right: 50px;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-stretch: condensed;
+    font-size:large;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: green;
+}
+
+.btn {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: black;
+    text-align: left;
+    padding-top: 0;
+    position: absolute;
+    left: 20px;
+    bottom: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 65px;
+    font-weight: bold; /* Fixed font-weight property */
+    text-decoration: none;
+    font-stretch: condensed;
+    animation: slideInFromLeft 1s ease-out; /* Apply animation */
+}
+/* Keyframe animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Keyframe animation for forms */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Keyframe animation for button pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.btn:hover {
+    background-color: green;
+    animation: pulse 1s infinite; /* Apply pulse animation */
+}

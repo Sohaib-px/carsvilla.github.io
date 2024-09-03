@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family:'Times New Roman', Times, serif;
+  background-image: url('4933463.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 15px;
+  color: #f2f2f2;
+  text-align: center;
+  
+}
+
+header {
+  padding: 30px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: goldenrod;
+  border-bottom: 3px solid goldenrod;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+#registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  
+}
+
+button, a {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+
+}
+
+button:hover, #next-page-link:hover {
+  background-color: darkgray;
+  transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+form {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid goldenrod;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+  margin-left: 50px;
+}
+header button {
+    margin: 10px; /* Add space between the buttons */
+    padding: 10px 20px; /* Add some padding inside the buttons */
+    font-size: 16px; /* Adjust font size if needed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color:black; /* Button background color */
+    color: #fff; /* Button text color */
+}
+
+input[type="text"], input[type="tel"] {
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  background-color: #222;
+  width: 100%;
+  color: white;
+  font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus {
+  background-color: gray;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:hover, input[type="tel"]:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
